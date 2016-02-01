@@ -256,6 +256,10 @@ CFGFUN(force_focus_wrapping, const char *value) {
     config.force_focus_wrapping = eval_boolstr(value);
 }
 
+CFGFUN(focus_keeps_workspace, const char *value) {
+    config.focus_keeps_workspace = eval_boolstr(value);
+}
+
 CFGFUN(workspace_back_and_forth, const char *value) {
     config.workspace_auto_back_and_forth = eval_boolstr(value);
 }

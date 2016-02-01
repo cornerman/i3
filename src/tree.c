@@ -520,6 +520,9 @@ static bool _tree_next(Con *con, char way, orientation_t orientation, bool wrap)
     /* Stop recursing at workspaces after attempting to switch to next
      * workspace if possible. */
     if (con->type == CT_WORKSPACE) {
+        if (config.focus_keeps_workspace)
+            return false;
+
         if (con_get_fullscreen_con(con, CF_GLOBAL)) {
             DLOG("Cannot change workspace while in global fullscreen mode.\n");
             return false;

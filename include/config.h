@@ -143,6 +143,9 @@ struct Config {
      * more often. */
     bool force_focus_wrapping;
 
+    /** Always stay on the current workspace when using directional focus */
+    bool focus_keeps_workspace;
+
     /** By default, use the RandR API for multi-monitor setups.
      * Unfortunately, the nVidia binary graphics driver doesn't support
      * this API. Instead, it only support the less powerful Xinerama API,

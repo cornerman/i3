@@ -35,6 +35,7 @@ state INITIAL:
   'focus_follows_mouse'                    -> FOCUS_FOLLOWS_MOUSE
   'mouse_warping'                          -> MOUSE_WARPING
   'force_focus_wrapping'                   -> FORCE_FOCUS_WRAPPING
+  'focus_keeps_workspace'                  -> FOCUS_KEEPS_WORKSPACE
   'force_xinerama', 'force-xinerama'       -> FORCE_XINERAMA
   'workspace_auto_back_and_forth'          -> WORKSPACE_BACK_AND_FORTH
   'fake_outputs', 'fake-outputs'           -> FAKE_OUTPUTS
@@ -196,6 +197,11 @@ state MOUSE_WARPING:
 state FORCE_FOCUS_WRAPPING:
   value = word
       -> call cfg_force_focus_wrapping($value)
+
+# force_focus_wrapping
+state FOCUS_KEEPS_WORKSPACE:
+  value = word
+      -> call cfg_focus_keeps_workspace($value)
 
 # force_xinerama
 state FORCE_XINERAMA:
